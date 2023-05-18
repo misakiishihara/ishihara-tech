@@ -30,7 +30,7 @@ export default function Home() {
       </div>
       <div>
         <articles className='flex flex-col ml-8 my-5 mx-8'>
-          <article className='mb-5 border-4 border-blue-700'>
+          <article className='mb-5'>
             <Link href="/">
               <h1 className='text-2xl'>これはテストの投稿</h1>
               <br />
@@ -40,7 +40,7 @@ export default function Home() {
               <small>Date</small>
             </Link>
           </article>
-          <article className='mb-5 border-4'>
+          <article className='mb-5'>
             <Link href="/">
               <h1 className='text-2xl'>これはテストの投稿</h1>
               <br />
@@ -50,7 +50,7 @@ export default function Home() {
               <small>Date</small>
             </Link>
           </article>
-          <article className='mb-5 border-4'>
+          <article className='mb-5'>
             <Link href="/">
               <h1 className='text-2xl'>これはテストの投稿</h1>
               <br />
