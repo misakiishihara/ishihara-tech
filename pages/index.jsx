@@ -3,12 +3,27 @@ import Link from 'next/link'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import Layout from '../components/Layout'
+import { getPostsData } from '../lib/posts'
 
 const STRING = "I am "
 const MAX_LENGTH = 20
 let modStr = ''
 
-export default function Home() {
+//pre-rebdering by SSG
+export async function getStaticProps() {
+  const allPostsData = getPostsData();
+  console.log(allPostsData);//expected 
+
+  return {
+    props: {
+      allPostsData,
+    },
+  };
+}
+
+
+
+export default function Home({ allPostsData }) {
   return (
     <>
       <Layout />
