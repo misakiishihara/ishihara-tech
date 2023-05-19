@@ -45,36 +45,18 @@ export default function Home({ allPostsData }) {
       </div>
       <div>
         <articles className='flex flex-col ml-8 my-5 mx-8'>
-          <article className='mb-5'>
-            <Link href="/">
-              <h1 className='text-2xl'>これはテストの投稿</h1>
+          {allPostsData.map(({ id, title, date, thumbnail }) => (
+            <article key={id} className='mb-5'>
+            <Link href={`/posts/${id}`}>
+              <h1 className='text-2xl'>{title}</h1>
               <br />
               <p>
-                だりゃああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああ
+                
               </p>
-              <small>Date</small>
+              <small>{date}</small>
             </Link>
           </article>
-          <article className='mb-5'>
-            <Link href="/">
-              <h1 className='text-2xl'>これはテストの投稿</h1>
-              <br />
-              <p>
-                だりゃああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああ
-              </p>
-              <small>Date</small>
-            </Link>
-          </article>
-          <article className='mb-5'>
-            <Link href="/">
-              <h1 className='text-2xl'>これはテストの投稿</h1>
-              <br />
-              <p>
-                だりゃああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああ
-              </p>
-              <small>Date</small>
-            </Link>
-          </article>
+          ))}
         </articles>
       </div>
     </>
