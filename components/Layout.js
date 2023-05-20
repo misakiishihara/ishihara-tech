@@ -14,7 +14,7 @@ function Layout({ children }) {
                 <h1 className="text-5xl py-5 px-5">
                     <Link href="/">{name}</Link>
                 </h1>
-                <Link href="./pages/About">
+                <Link href="/aboutme">
                     <img className="object-cover h-30 w-24 py-3 mr-6" src="/images/ishihara.jpg" />
                 </Link>
             </header>
