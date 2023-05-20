@@ -1,9 +1,24 @@
-import Layout from "../../components/Layout";
-import { getAllPostsIds, getPostData, } from "../../lib/posts";
+import { useRouter } from "next/router";
+import { getAllPostsIds, getPostsData } from "../../lib/posts";
+
+export default function PostData({ post }) {
+    const router = useRouter();
+
+    if(router.isFallback || !post) {
+        return <div>Loading ...</div>
+    }
+
+    return (
+        <>
+            <h1>{post.title}</h1>
+            <p>{post.created_at}</p>
+            <p>{post.content}</p>
+        </>
+    );
+}
 
 export async function getStaticPaths() {
-    const paths = getAllPostsIds();
-
+    const paths = await getAllPostsIds();
     return {
         paths,
         fallback: false,
@@ -11,21 +26,11 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-    const postData = await getPostData(params.id);
-
+    const post = await getPostsData(params.id);
     return {
         props: {
-            postData,
+            post,
         },
+            revalidate: 3,
     };
 }
-
-export default function Post( postData ) {
-    return (
-        <Layout>
-            {postData.title}
-            {postData.date}
-            {postData.blogContentHTML}
-        </Layout>
-    );
-};
