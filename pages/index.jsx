@@ -1,8 +1,8 @@
 import Head from 'next/head'
 import Link from 'next/link'
 import Layout from '../components/Layout'
-import Post from '../components/post'
-import { getAllPostsData } from '../lib/getPosts'
+import Post from '../components/post/post'
+import { getAllPostsData } from '../lib/posts'
 
 const STRING = "I am "
 const MAX_LENGTH = 20
@@ -14,8 +14,7 @@ export default function Home({ posts }) {
   return (
     <>
       <Layout />
-      <section>
-        <p className='ml-8 py-3'>
+        <div className='ml-8 py-3'>
           東京のエンジニアによる技術ブログ。時々雑談。<br/>
           左右対称フェチで、カルト映画が好きです。<br />
           <Link href="/aboutblog">
@@ -23,11 +22,18 @@ export default function Home({ posts }) {
               About this blog
             </p>
           </Link>
-        </p>
-      </section>
-      Articles
-      {posts && posts.map((post) => <Post key={post.id} post={post} />)}
-    </>
+        </div>
+      <h1 className='text-4xl ml-8 mb-6'>
+        Articles
+      </h1>
+      <div className="container">
+        <div className='py-5'>
+          {posts && 
+          posts.map((post) => <Post key={post.id} post={post} 
+          />)}
+        </div>
+      </div>
+    </>  
   )
 }
 
