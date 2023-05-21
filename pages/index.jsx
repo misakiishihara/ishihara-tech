@@ -24,7 +24,7 @@ export default function Home({ posts }) {
           </Link>
         </div>
       <h1 className='text-4xl ml-8 mb-6'>
-        Articles
+        Articles  (     {posts.length}     )  of all
       </h1>
       <div className="container">
         <div className='py-5'>
