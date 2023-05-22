@@ -1,14 +1,22 @@
 import Head from 'next/head'
 import Link from 'next/link'
 import Layout from '../components/Layout'
-import Post from '../components/post/post'
-import { getAllPostsData } from '../lib/posts'
 import { client } from '../lib/client'
 
 const STRING = "I am "
 const MAX_LENGTH = 20
 let modStr = ''
 
+
+export const getStaticProps = async () => {
+  const post = await client.get({ endpoint: "post" });
+
+  return {
+    props: {
+      post: post.contents,
+    },
+  }
+}
 
 
 export default function Home({ post }) {
@@ -35,32 +43,17 @@ export default function Home({ post }) {
         </div>
       </div> */}
       <div>
-        <ul>
-          {post.map((post) => (
-            <li key={post.id}>
+       <h1>Articles</h1>
+       <ul>
+        {post.map((post) => (
+          <li key={post.id}>
+            <Link href={`/post/${post.id}`}>
               {post.title}
-            </li>
-          ))}
-        </ul>
+            </Link>
+          </li>
+        ))}
+       </ul>
       </div>
     </>  
   )
-}
-
-// export async function getStaticProps() {
-//   const posts = await getAllPostsData();
-//   return {
-//     props: { posts },
-//     revalidate: 3,
-//   };
-// }
-
-export const getStaticProps = async () => {
-  const data = await client.get({ endpoint: "post" });
-
-  return {
-    props: {
-      post: data.contents,
-    },
-  }
 }
