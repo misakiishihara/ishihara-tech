@@ -2,10 +2,8 @@ import Head from 'next/head'
 import Link from 'next/link'
 import Layout from '../components/Layout'
 import { client } from '../lib/client'
-
-const STRING = "I am "
-const MAX_LENGTH = 20
-let modStr = ''
+import ReactPaginate from "react-paginate"
+import { useState } from 'react'
 
 
 export const getStaticProps = async () => {
@@ -20,6 +18,18 @@ export const getStaticProps = async () => {
 
 
 export default function Home({ post }) {
+  
+  const [offset, setOffset] = useState(0);
+  const perPage = 5;
+  const handleChangePage = (data) => {
+    setOffset(data.selected * perPage)
+  
+    window.scrollTo({
+      top:0,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <>
       <Layout />
@@ -34,9 +44,9 @@ export default function Home({ post }) {
         </div>
       <div className='container w-auto ml-7'>
        <h1 className='text-5xl'>Articles</h1>
-       <ul className='my-7 '>
-        {post.map((post) => (
-          <li className='flex' key={post.id}>
+       <ul className='py-5'>
+        {post.slice(offset, offset + perPage).map((post) => (
+          <li className='flex py-4' key={post.id}>
             <Link href={`/post/${post.id}`}>
               <h1 className='text-4xl'>{post.title}</h1>
               <p className='opacity-50'>{post.date}</p>
@@ -45,7 +55,14 @@ export default function Home({ post }) {
           </li>
         ))}
        </ul>
+      <ReactPaginate
+          previousLabel={"<"}
+          nextLabel={">"}
+          pageCount={Math.ceil(post.length / perPage)}
+          onPageChange={handleChangePage}
+      />
       </div>
     </>  
   )
 }
+
