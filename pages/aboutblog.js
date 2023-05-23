@@ -1,26 +1,24 @@
 import Layout from "../components/Layout";
+import Link from "next/link";
 
 export default function Aboutblog () {
     return (
         <Layout>
+            <div className="container ">
             <h1 className="text-4xl">
-                How to make this blog ?
+                About me  ?
             </h1>
-            <p>
-                このブログは以下の技術を用いて開発いたしました。
-                フロントエンド:
-                    NextJS
-                バックエンド:
-                    Django(djangorestframework)
-                DB:
-                    PostgreSQL
-                コンテナサービス:
-                    Docker
-                CodePipeline, CodeDeployによるCI/CDの自動化
-                S3による静的ホスティング、CloudFrontで配信コンテンツの最適化
-                Route53の名前解決
-                RDS
+            <div className= "py-5">
+                <h1 className="text-4xl mb-3">「死ぬまで勉強」</h1>
+                <p>
+                    新しいことを学ぶことが好きです。<br/>
+                    興味のある事柄に対しては何事もまず自分で調べ、行動し、手に取ってみます。
+                </p>
+            <p className="flex justify-center mt-10">
+                <Link href="/">Back to Home</Link>
             </p>
+            </div>
+            </div>
         </Layout>
     );
 };

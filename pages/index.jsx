@@ -33,16 +33,13 @@ export default function Home({ post }) {
   return (
     <>
       <Layout />
-        <div className='ml-8 py-3'>
-          東京のエンジニアによる技術ブログ。時々雑談。<br/>
-          左右対称フェチで、カルト映画が好きです。<br />
-          <Link href="/aboutblog">
-            <p className='py-5 opacity-50 underline hover:opacity-100'>
-              About this blog
-            </p>
-          </Link>
+        <div className='ml-8 py-1'>
+          <p>
+            東京のエンジニアによる技術ブログ。時々雑談。<br/>
+            左右対称フェチで、カルト映画が好きです。<br />
+          </p>
         </div>
-       <h1 className='text-5xl'>Articles</h1>
+       <h1 className='text-5xl ml-5 py-5'>Articles</h1>
        <div className='grid grid-cols-2 w-auto ml-7'>
        <ul className=' py-5'>
         {post.slice(offset, offset + perPage).map((post) => (
