@@ -42,9 +42,9 @@ export default function Home({ post }) {
             </p>
           </Link>
         </div>
-      <div className='container w-auto ml-7'>
        <h1 className='text-5xl'>Articles</h1>
-       <ul className='py-5'>
+       <div className='grid grid-cols-2 w-auto ml-7'>
+       <ul className=' py-5'>
         {post.slice(offset, offset + perPage).map((post) => (
           <li className='flex py-4' key={post.id}>
             <Link href={`/post/${post.id}`}>
@@ -54,13 +54,15 @@ export default function Home({ post }) {
             </Link>
           </li>
         ))}
-       </ul>
-      <ReactPaginate
+        <div className=''>
+        <ReactPaginate
           previousLabel={"<"}
           nextLabel={">"}
           pageCount={Math.ceil(post.length / perPage)}
           onPageChange={handleChangePage}
       />
+      </div> 
+       </ul>
       </div>
     </>  
   )
