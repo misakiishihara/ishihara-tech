@@ -32,23 +32,15 @@ export default function Home({ post }) {
             </p>
           </Link>
         </div>
-      {/* <h1 className='text-4xl ml-8 mb-6'>
-        Articles  (     {posts.length}     )  of all
-      </h1>
-      <div className="container">
-        <div className='py-5'>
-          {posts && 
-          posts.map((post) => <Post key={post.id} post={post} 
-          />)}
-        </div>
-      </div> */}
-      <div>
-       <h1>Articles</h1>
-       <ul>
+      <div className='container w-auto ml-7'>
+       <h1 className='text-5xl'>Articles</h1>
+       <ul className='my-7 '>
         {post.map((post) => (
-          <li key={post.id}>
+          <li className='flex' key={post.id}>
             <Link href={`/post/${post.id}`}>
-              {post.title}
+              <h1 className='text-4xl'>{post.title}</h1>
+              <p className='opacity-50'>{post.date}</p>
+              <section>Tag:   [{post.tag}]</section>
             </Link>
           </li>
         ))}
