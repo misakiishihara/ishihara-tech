@@ -20,7 +20,7 @@ export const getStaticProps = async () => {
 export default function Home({ post }) {
   
   const [offset, setOffset] = useState(0);
-  const perPage = 5;
+  const perPage = 3;
   const handleChangePage = (data) => {
     setOffset(data.selected * perPage)
   
