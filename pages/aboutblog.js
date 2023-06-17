@@ -6,14 +6,52 @@ export default function Aboutblog () {
         <Layout>
             <div className="container ">
             <h1 className="text-4xl">
-                About me  ?
+                About me  
             </h1>
             <div className= "py-5">
-                <h1 className="text-4xl mb-3">「死ぬまで勉強」</h1>
-                <p>
+                <h1 className="text-4xl mb-3">Misaki Ishihara</h1>
+                <p className="mb-5">
+                    1997/6/19(26)神奈川県生まれ東京在住<br/>
                     新しいことを学ぶことが好きです。<br/>
-                    興味のある事柄に対しては何事もまず自分で調べ、行動し、手に取ってみます。
+                    興味のある事柄に対しては何事もまず自分で調べ、行動します。<br/>
+                    現在はインフラ領域、クラウドサービスに興味があります。
                 </p>
+                <div className="border-y-2 mb-4"></div>
+                <h1 className="text-4xl mb-4">
+                    What can I do
+                </h1>
+                <div className="container bg-gray-600">
+                    <div className="grid grid-cols-3 gap-3">
+                        <div>
+                            <h1>Frontend</h1>
+                            <p>HTML5 CSS3 JavaScript TypeScript
+                                React NEXT.js AWS-CloudFront
+                            </p>
+                        </div>
+                        <div>
+                            <h1>Backend</h1>
+                            <p>PHP Go Python<br/>Laravel Django</p>
+                        </div>
+                        <div>
+                            <h1>Database</h1>
+                            <p>MySQL MongoDB AWS-RDS</p>
+                        </div>
+                        <div>
+                            <h1>Others</h1>
+                            <p>Github Docker Kubernetes Firebase Vercel</p>
+                        </div>
+                        <div>
+                            <h1>OS</h1>
+                            <p>Windows(main) Linux Mac</p>
+                        </div>
+                        <div>
+                            <h1></h1>
+                        </div>
+                        <div>
+                            <h1></h1>
+                        </div>
+                    </div>
+                </div>
             <p className="flex justify-center mt-10">
                 <Link href="/">Back to Home</Link>
             </p>
