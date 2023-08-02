@@ -10,11 +10,9 @@ export default function Aboutblog () {
             </h1>
             <div className= "py-5">
                 <h1 className="text-4xl mb-3">Misaki Ishihara</h1>
-                <p className="mb-5">
-                    1997/6/19(26)神奈川県生まれ東京在住<br/>
-                    新しいことを学ぶことが好きです。<br/>
-                    興味のある事柄に対しては何事もまず自分で調べ、行動します。<br/>
-                    現在はインフラ領域、クラウドサービスに興味があります。
+                <p className="mb-5 text-red-600>
+        　　　　　　　This is discrimination box.
+                   Please write here .
                 </p>
                 <div className="border-y-2 mb-4"></div>
                 <h1 className="text-4xl mb-4">
