@@ -10,10 +10,14 @@ export default function Aboutblog () {
             </h1>
             <div className= "py-5">
                 <h1 className="text-4xl mb-3">Misaki Ishihara</h1>
-                <p className="mb-5 text-red-600>
+                <p className="mb-5 text-red-600">
+        
         　　　　　　　This is discrimination box.
                    Please write here .
                 </p>
+        　　　　　　｛/* ダブルクォーテーション外れててVercelで
+                   デプロイ中にエラー起きてます。
+                   */｝
                 <div className="border-y-2 mb-4"></div>
                 <h1 className="text-4xl mb-4">
                     What can I do
